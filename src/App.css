@@ -1,0 +1,215 @@
+@charset "UTF-8";
+
+/* ========================================================== 
+                            Resets
+========================================================== */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+/* ========================================================== 
+                            Colors
+========================================================== */
+
+:root {
+	--yellow: #ffca41;
+	--grey: rgb(51, 51, 51);
+	--grey-soft: rgba(51, 51, 51, 0.5);
+}
+
+/* ========================================================== 
+                            Fonts
+========================================================== */
+
+@font-face {
+	font-family: "Roboto-Slab";
+	src: url("./fonts/RobotoSlab-VariableFont_wght.ttf");
+}
+
+/* ========================================================== 
+                            Body
+========================================================== */
+
+body {
+	font-family: "Roboto-Slab";
+	background-color: #e2e2e2;
+	padding-block: 4vh;
+	min-height: 100vh;
+	color: var(--grey);
+}
+
+/* ========================================================== 
+                          Content
+========================================================== */
+
+.beer__wrapper {
+	max-width: 414px;
+	background-color: white;
+	margin: 0 auto;
+	padding-block: 30px 5px;
+	padding-inline: 30px;
+}
+
+.article__beer {
+	margin-bottom: 30px;
+}
+
+.article__beer img {
+	width: 414px;
+	max-height: 240px;
+	object-fit: cover;
+}
+
+.article__beer h2 {
+	background-color: var(--yellow);
+	color: white;
+	padding: 5px 15px;
+}
+
+.article__beer p {
+	padding-top: 5px;
+}
+
+/* ========================================================== 
+                          Beer API
+========================================================== */
+
+.section__beers {
+	max-width: 414px;
+	margin: 0 auto;
+}
+
+.beer__product {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 30px;
+	background-color: white;
+	padding: 30px 20px;
+	border-bottom: 1px solid #000;
+}
+
+.beer__image {
+	flex-basis: 150px;
+	display: flex;
+	justify-content: center;
+}
+
+.beer__image img {
+	object-fit: contain;
+	max-height: 200px;
+}
+
+.beer__infos {
+	flex-basis: 300px;
+	display: flex;
+	flex-direction: column;
+}
+
+.beer__infos h2 {
+	font-size: 1.875rem;
+}
+
+.beer__infos h3 {
+	color: var(--yellow);
+	font-size: 1.125rem;
+}
+
+.beer__infos p {
+	padding-block: 12px 20px;
+	font-size: 0.9375rem;
+	font-weight: 500;
+}
+
+.beer__infos button {
+	background-color: var(--yellow);
+	color: white;
+	border: none;
+	padding: 5px 25px;
+	border-radius: 20px;
+	font-size: 1.25rem;
+	cursor: pointer;
+}
+
+/* ========================================================== 
+                          Beer Detail
+========================================================== */
+
+.section__beer__detail {
+	max-width: 414px;
+	margin: 0 auto;
+	padding-block: 36px 0;
+	background-color: white;
+}
+
+.beer__product_detail {
+	padding-inline: 42px;
+	padding-block-end: 56px;
+}
+
+.beer__product_detail .product__image img {
+	width: 100%;
+	object-fit: contain;
+	height: 410px;
+}
+
+.beer__product_detail h2 {
+	padding-block: 24px 12px;
+	font-weight: 500;
+	font-size: 3.25rem;
+	line-height: 3.5rem;
+}
+
+.beer__product_detail h3 {
+	color: var(--yellow);
+	font-weight: 900;
+	font-size: 1.125rem;
+	padding-block-end: 24px;
+}
+
+.beer__product_detail .brewed__level {
+	color: var(--grey-soft);
+	display: flex;
+	justify-content: space-between;
+}
+
+.beer__product_detail .description {
+	font-size: 0.9375rem;
+	font-weight: 500;
+	padding-block: 10px 30px;
+}
+
+.beer__product_detail svg {
+	max-width: 56px;
+}
+/* ========================================================== 
+                          Navbar
+========================================================== */
+
+.beer__nav {
+	background-color: var(--yellow);
+	text-align: center;
+	padding: 5px;
+}
+
+.beer__nav svg {
+	padding: 8px;
+	background-color: white;
+	border-radius: 50%;
+	cursor: pointer;
+	width: 56px;
+	height: 56px;
+}
