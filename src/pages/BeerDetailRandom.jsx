@@ -19,31 +19,37 @@ const BeerDetailRandom = () => {
 	}
 
 	return (
-		<section className="section__beer__detail">
-			<article className="beer__product_detail">
-				<div className="product__image">
-					<img
-						src={beerDataRandom.image_url}
-						alt={beerDataRandom.name}
-					/>
-				</div>
-				<h2>{beerDataRandom.name}</h2>
-				<h3>{beerDataRandom.tagline}</h3>
-				<div className="brewed__level">
-					<p>First Brewed: </p>
-					<p>{beerDataRandom.first_brewed}</p>
-				</div>
-				<div className="brewed__level">
-					<p>Attenuation level: </p>
-					<p>{beerDataRandom.attenuation_level}</p>
-				</div>
-				<p className="description">{beerDataRandom.description}</p>
-				<Link to="/">
-					<ArrowLeft />
-				</Link>
-			</article>
-			<Navbar />
-		</section>
+		<div class="smartphone">
+			<div class="content">
+				<section className="section__beer__detail">
+					<article className="beer__product_detail">
+						<div className="product__image">
+							<img
+								src={beerDataRandom.image_url}
+								alt={beerDataRandom.name}
+							/>
+						</div>
+						<h2>{beerDataRandom.name}</h2>
+						<h3>{beerDataRandom.tagline}</h3>
+						<div className="brewed__level">
+							<p>First Brewed: </p>
+							<p>{beerDataRandom.first_brewed}</p>
+						</div>
+						<div className="brewed__level">
+							<p>Attenuation level: </p>
+							<p>{beerDataRandom.attenuation_level}</p>
+						</div>
+						<p className="description">
+							{beerDataRandom.description}
+						</p>
+						<Link to="/">
+							<ArrowLeft />
+						</Link>
+					</article>
+					<Navbar />
+				</section>
+			</div>
+		</div>
 	);
 };
 

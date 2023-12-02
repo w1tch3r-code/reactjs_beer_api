@@ -14,30 +14,34 @@ const BeerApi = () => {
 	}, []);
 
 	return (
-		<section className="section__beers">
-			{beerData ? (
-				<div>
-					{beerData.map((item, index) => (
-						<article className="beer__product" key={index}>
-							<div className="beer__image">
-								<img src={item.image_url} />
-							</div>
-							<div className="beer__infos">
-								<h2>{item.name}</h2>
-								<h3>{item.tagline}</h3>
-								<p>Created by: {item.name}</p>
-								<Link to={`/beers/${item._id}`}>
-									<button>Details</button>
-								</Link>
-							</div>
-						</article>
-					))}
-				</div>
-			) : (
-				<p>Laden....</p>
-			)}
-			<Navbar />
-		</section>
+		<div class="smartphone">
+			<div class="content">
+				<section className="section__beers">
+					{beerData ? (
+						<div>
+							{beerData.map((item, index) => (
+								<article className="beer__product" key={index}>
+									<div className="beer__image">
+										<img src={item.image_url} />
+									</div>
+									<div className="beer__infos">
+										<h2>{item.name}</h2>
+										<h3>{item.tagline}</h3>
+										<p>Created by: {item.name}</p>
+										<Link to={`/beers/${item._id}`}>
+											<button>Details</button>
+										</Link>
+									</div>
+								</article>
+							))}
+						</div>
+					) : (
+						<p>Laden....</p>
+					)}
+					<Navbar />
+				</section>
+			</div>
+		</div>
 	);
 };
 

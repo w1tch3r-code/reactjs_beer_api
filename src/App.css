@@ -46,9 +46,11 @@ img {
 body {
 	font-family: "Roboto-Slab";
 	background-color: #e2e2e2;
-	padding-block: 4vh;
 	min-height: 100vh;
 	color: var(--grey);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 /* ========================================================== 
@@ -59,7 +61,7 @@ body {
 	max-width: 414px;
 	background-color: white;
 	margin: 0 auto;
-	padding-block: 30px 5px;
+	padding-block: 20px 5px;
 	padding-inline: 30px;
 }
 
@@ -212,4 +214,59 @@ body {
 	cursor: pointer;
 	width: 56px;
 	height: 56px;
+}
+
+/* ========================================================== 
+                          Smartphone
+========================================================== */
+
+
+/* The device with borders */
+.smartphone {
+  position: relative;
+  width: 446px;
+  height: 856px;
+  margin: auto;
+  border: 16px black solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+	box-shadow: 0 0 10px 5px rgba(51, 51, 51, 0.5);
+}
+
+/* The horizontal line on the top of the device */
+.smartphone:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.smartphone:after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.smartphone .content {
+  width: 414px;
+  height: 736px;
+	overflow: hidden;
+	overflow-y: scroll;
+  background: white;
 }

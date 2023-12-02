@@ -22,28 +22,32 @@ const BeerDetail = () => {
 	}
 
 	return (
-		<section className="section__beer__detail">
-			<article className="beer__product_detail">
-				<div className="product__image">
-					<img src={beerData.image_url} alt={beerData.name} />
-				</div>
-				<h2>{beerData.name}</h2>
-				<h3>{beerData.tagline}</h3>
-				<div className="brewed__level">
-					<p>First Brewed: </p>
-					<p>{beerData.first_brewed}</p>
-				</div>
-				<div className="brewed__level">
-					<p>Attenuation level: </p>
-					<p>{beerData.attenuation_level}</p>
-				</div>
-				<p className="description">{beerData.description}</p>
-				<NavLink to="/beerapi">
-					<ArrowLeft />
-				</NavLink>
-			</article>
-			<Navbar />
-		</section>
+		<div class="smartphone">
+			<div class="content">
+				<section className="section__beer__detail">
+					<article className="beer__product_detail">
+						<div className="product__image">
+							<img src={beerData.image_url} alt={beerData.name} />
+						</div>
+						<h2>{beerData.name}</h2>
+						<h3>{beerData.tagline}</h3>
+						<div className="brewed__level">
+							<p>First Brewed: </p>
+							<p>{beerData.first_brewed}</p>
+						</div>
+						<div className="brewed__level">
+							<p>Attenuation level: </p>
+							<p>{beerData.attenuation_level}</p>
+						</div>
+						<p className="description">{beerData.description}</p>
+						<NavLink to="/beerapi">
+							<ArrowLeft />
+						</NavLink>
+					</article>
+					<Navbar />
+				</section>
+			</div>
+		</div>
 	);
 };
 
