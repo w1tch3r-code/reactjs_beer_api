@@ -92,6 +92,8 @@ body {
 .section__beers {
 	max-width: 414px;
 	margin: 0 auto;
+	height: -webkit-fill-available;
+	height: 100%;
 }
 
 .beer__product {
@@ -146,6 +148,10 @@ body {
 	cursor: pointer;
 }
 
+.beer__infos button:hover {
+	box-shadow: inset 0 0 5px #6d6d6d;
+}
+
 /* ========================================================== 
                           Beer Detail
 ========================================================== */
@@ -155,6 +161,8 @@ body {
 	margin: 0 auto;
 	padding-block: 36px 0;
 	background-color: white;
+	height: -webkit-fill-available;
+	height: 100%;
 }
 
 .beer__product_detail {
@@ -204,7 +212,10 @@ body {
 .beer__nav {
 	background-color: var(--yellow);
 	text-align: center;
-	padding: 5px;
+	padding: 5px 0 5px 15px;
+	position: sticky;
+	bottom: 0;
+	box-shadow: 0 0 10px 1px #6d6d6d;
 }
 
 .beer__nav svg {
@@ -214,59 +225,87 @@ body {
 	cursor: pointer;
 	width: 56px;
 	height: 56px;
+
+	box-shadow: inset 0 0 5px var(--yellow);
+}
+
+.beer__nav svg:hover {
+	box-shadow: inset 0 0 5px #6d6d6d;
 }
 
 /* ========================================================== 
                           Smartphone
 ========================================================== */
 
-
 /* The device with borders */
 .smartphone {
-  position: relative;
-  width: 446px;
-  height: 856px;
-  margin: auto;
-  border: 16px black solid;
-  border-top-width: 60px;
-  border-bottom-width: 60px;
-  border-radius: 36px;
+	position: relative;
+	width: 446px;
+	height: 856px;
+	margin: auto;
+	border: 16px black solid;
+	border-top-width: 60px;
+	border-bottom-width: 60px;
+	border-radius: 36px;
 	box-shadow: 0 0 10px 5px rgba(51, 51, 51, 0.5);
 }
 
 /* The horizontal line on the top of the device */
 .smartphone:before {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 5px;
-  position: absolute;
-  top: -30px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #333;
-  border-radius: 10px;
+	content: "";
+	display: block;
+	width: 60px;
+	height: 5px;
+	position: absolute;
+	top: -30px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #333;
+	border-radius: 10px;
 }
 
 /* The circle on the bottom of the device */
 .smartphone:after {
-  content: '';
-  display: block;
-  width: 35px;
-  height: 35px;
-  position: absolute;
-  left: 50%;
-  bottom: -65px;
-  transform: translate(-50%, -50%);
-  background: #333;
-  border-radius: 50%;
+	content: "";
+	display: block;
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	left: 50%;
+	bottom: -65px;
+	transform: translate(-50%, -50%);
+	background: #333;
+	border-radius: 50%;
 }
 
 /* The screen (or content) of the device */
 .smartphone .content {
-  width: 414px;
-  height: 736px;
+	width: 414px;
+	height: 736px;
 	overflow: hidden;
 	overflow-y: scroll;
-  background: white;
+	background: white;
+}
+
+.logo__wrapper {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo {
+	height: 4em;
+	will-change: filter;
+	transition: filter 300ms;
+	animation: logo-spin infinite 2s ease-in-out;
+}
+
+@keyframes logo-spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }

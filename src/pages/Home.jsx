@@ -2,8 +2,8 @@ import BeerHeroItem from "../components/BeerHeroItem";
 
 const Home = () => {
 	return (
-		<div class="smartphone">
-			<div class="content">
+		<div className="smartphone">
+			<div className="content">
 				<section className="beer__wrapper">
 					<BeerHeroItem
 						url={"/beerapi"}

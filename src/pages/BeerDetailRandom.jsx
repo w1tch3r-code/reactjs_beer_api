@@ -8,45 +8,59 @@ const BeerDetailRandom = () => {
 
 	// * Wir fetchen mit UseEffect
 	useEffect(() => {
-		fetch("https://ih-beers-api2.herokuapp.com/beers/random")
+		fetch("https://api.punkapi.com/v2/beers/random")
 			.then((res) => res.json())
 			.then((data) => setBeerDataRandom(data))
 			.catch((err) => console.error(err));
 	}, []);
 
-	if (!beerDataRandom) {
-		return <p>Laden....</p>;
-	}
+	const filteredProdukt = beerDataRandom?.filter(
+		(item) => item.image_url !== null
+	);
 
 	return (
-		<div class="smartphone">
-			<div class="content">
+		<div className="smartphone">
+			<div className="content">
 				<section className="section__beer__detail">
-					<article className="beer__product_detail">
-						<div className="product__image">
+					{beerDataRandom ? (
+						<div>
+							<article className="beer__product_detail">
+								{filteredProdukt.length > 0 && (
+									<div className="product__image">
+										<img
+											src={filteredProdukt[0].image_url.toString()}
+											alt={beerDataRandom[0].name}
+										/>
+									</div>
+								)}
+								<h2>{beerDataRandom[0].name}</h2>
+								<h3>{beerDataRandom[0].tagline}</h3>
+								<div className="brewed__level">
+									<p>First Brewed: </p>
+									<p>{beerDataRandom[0].first_brewed}</p>
+								</div>
+								<div className="brewed__level">
+									<p>Attenuation level: </p>
+									<p>{beerDataRandom[0].attenuation_level}</p>
+								</div>
+								<p className="description">
+									{beerDataRandom[0].description}
+								</p>
+								<Link to="/">
+									<ArrowLeft />
+								</Link>
+							</article>
+							<Navbar />
+						</div>
+					) : (
+						<div className="logo__wrapper">
 							<img
-								src={beerDataRandom.image_url}
-								alt={beerDataRandom.name}
+								src="/src/assets/react.svg"
+								className="logo"
+								alt="React logo"
 							/>
 						</div>
-						<h2>{beerDataRandom.name}</h2>
-						<h3>{beerDataRandom.tagline}</h3>
-						<div className="brewed__level">
-							<p>First Brewed: </p>
-							<p>{beerDataRandom.first_brewed}</p>
-						</div>
-						<div className="brewed__level">
-							<p>Attenuation level: </p>
-							<p>{beerDataRandom.attenuation_level}</p>
-						</div>
-						<p className="description">
-							{beerDataRandom.description}
-						</p>
-						<Link to="/">
-							<ArrowLeft />
-						</Link>
-					</article>
-					<Navbar />
+					)}
 				</section>
 			</div>
 		</div>

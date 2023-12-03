@@ -7,15 +7,15 @@ const BeerApi = () => {
 
 	//   * Wir Fetchen mit UseEffect
 	useEffect(() => {
-		fetch("https://ih-beers-api2.herokuapp.com/beers")
+		fetch("https://api.punkapi.com/v2/beers")
 			.then((res) => res.json())
 			.then((data) => setBeerData(data))
 			.catch((err) => console.error(err));
 	}, []);
 
 	return (
-		<div class="smartphone">
-			<div class="content">
+		<div className="smartphone">
+			<div className="content">
 				<section className="section__beers">
 					{beerData ? (
 						<div>
@@ -28,17 +28,23 @@ const BeerApi = () => {
 										<h2>{item.name}</h2>
 										<h3>{item.tagline}</h3>
 										<p>Created by: {item.name}</p>
-										<Link to={`/beers/${item._id}`}>
+										<Link to={`/beers/${item.id}`}>
 											<button>Details</button>
 										</Link>
 									</div>
 								</article>
 							))}
+							<Navbar />
 						</div>
 					) : (
-						<p>Laden....</p>
+						<div className="logo__wrapper">
+							<img
+								src="/src/assets/react.svg"
+								className="logo"
+								alt="React logo"
+							/>
+						</div>
 					)}
-					<Navbar />
 				</section>
 			</div>
 		</div>
