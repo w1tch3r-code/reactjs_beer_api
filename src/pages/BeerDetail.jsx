@@ -52,7 +52,7 @@ const BeerDetail = () => {
 					) : (
 						<div className="logo__wrapper">
 							<img
-								src="/src/assets/react.svg"
+								src="/images/react.svg"
 								className="logo"
 								alt="React logo"
 							/>
