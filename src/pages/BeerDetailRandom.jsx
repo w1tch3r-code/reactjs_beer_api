@@ -6,17 +6,28 @@ import ArrowLeft from "../components/svg/ArrowLeft";
 const BeerDetailRandom = () => {
 	const [beerDataRandom, setBeerDataRandom] = useState(null);
 
-	// * Wir fetchen mit UseEffect
-	useEffect(() => {
+	// Funktion zum erneuten Fetchen, wenn das Bild null ist
+	const fetchRandomBeer = () => {
 		fetch("https://api.punkapi.com/v2/beers/random")
 			.then((res) => res.json())
-			.then((data) => setBeerDataRandom(data))
+			.then((data) => {
+				const filteredProdukt = data.filter(
+					(item) => item.image_url !== null
+				);
+				if (filteredProdukt.length > 0) {
+					setBeerDataRandom(data);
+				} else {
+					// Wenn das Bild null ist, erneut aufrufen
+					fetchRandomBeer();
+				}
+			})
 			.catch((err) => console.error(err));
-	}, []);
+	};
 
-	const filteredProdukt = beerDataRandom?.filter(
-		(item) => item.image_url !== null
-	);
+	// Wir fetchen mit UseEffect
+	useEffect(() => {
+		fetchRandomBeer();
+	}, []);
 
 	return (
 		<div className="smartphone">
@@ -25,14 +36,12 @@ const BeerDetailRandom = () => {
 					{beerDataRandom ? (
 						<div>
 							<article className="beer__product_detail">
-								{filteredProdukt.length > 0 && (
-									<div className="product__image">
-										<img
-											src={filteredProdukt[0].image_url.toString()}
-											alt={beerDataRandom[0].name}
-										/>
-									</div>
-								)}
+								<div className="product__image">
+									<img
+										src={beerDataRandom[0].image_url.toString()}
+										alt={beerDataRandom[0].name}
+									/>
+								</div>
 								<h2>{beerDataRandom[0].name}</h2>
 								<h3>{beerDataRandom[0].tagline}</h3>
 								<div className="brewed__level">
