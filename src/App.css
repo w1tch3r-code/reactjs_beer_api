@@ -45,7 +45,7 @@ img {
 
 body {
 	font-family: "Roboto-Slab";
-	background-color: #e2e2e2;
+	background: #e2e2e2 url('../images/beer_bg.jpg') center 20%/cover no-repeat fixed;
 	min-height: 100vh;
 	color: var(--grey);
 	display: flex;
@@ -54,7 +54,7 @@ body {
 }
 
 /* ========================================================== 
-                          Content
+                    Beer Hero List/Item
 ========================================================== */
 
 .beer__wrapper {
@@ -63,6 +63,11 @@ body {
 	margin: 0 auto;
 	padding-block: 20px 5px;
 	padding-inline: 30px;
+}
+
+.beer__wrapper h1 {
+	text-align: center;
+	padding-block-end: 10px;
 }
 
 .article__beer {

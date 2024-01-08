@@ -5,6 +5,7 @@ const BeerHeroList = () => {
 		<div className="smartphone">
 			<div className="content">
 				<section className="beer__wrapper">
+				<h1>Entdecke unsere Biervielfalt</h1>
 					<BeerHeroItem
 						url={"/beerapi"}
 						img={"/images/all-beers.jpg"}

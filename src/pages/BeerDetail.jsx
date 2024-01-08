@@ -9,7 +9,6 @@ const BeerDetail = () => {
 
 	const { beerID } = useParams();
 
-	// * Wir Fetchen mit UseEffect
 	useEffect(() => {
 		fetch(`https://api.punkapi.com/v2/beers/${beerID}`)
 			.then((res) => res.json())
