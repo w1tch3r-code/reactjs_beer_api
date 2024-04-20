@@ -6,7 +6,7 @@ const BeerApi = () => {
 	const [beerData, setBeerData] = useState(null);
 
 	useEffect(() => {
-		fetch("https://api.punkapi.com/v2/beers")
+		fetch("https://ih-beers-api2.herokuapp.com/beers")
 			.then((res) => res.json())
 			.then((data) => setBeerData(data))
 			.catch((err) => console.error(err));
@@ -27,7 +27,7 @@ const BeerApi = () => {
 										<h2>{item.name}</h2>
 										<h3>{item.tagline}</h3>
 										<p>Created by: {item.name}</p>
-										<Link to={`/beers/${item.id}`}>
+										<Link to={`/beers/${item._id}`}>
 											<button>Details</button>
 										</Link>
 									</div>
@@ -37,11 +37,7 @@ const BeerApi = () => {
 						</div>
 					) : (
 						<div className="logo__wrapper">
-							<img
-								src="/images/react.svg"
-								className="logo"
-								alt="React logo"
-							/>
+							<img src="/images/react.svg" className="logo" alt="React logo" />
 						</div>
 					)}
 				</section>

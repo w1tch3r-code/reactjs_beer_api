@@ -10,7 +10,7 @@ const BeerDetail = () => {
 	const { beerID } = useParams();
 
 	useEffect(() => {
-		fetch(`https://api.punkapi.com/v2/beers/${beerID}`)
+		fetch(`https://ih-beers-api2.herokuapp.com/beers/${beerID}`)
 			.then((res) => res.json())
 			.then((data) => setBeerData(data))
 			.catch((err) => console.error(err));
@@ -24,24 +24,19 @@ const BeerDetail = () => {
 						<div>
 							<article className="beer__product_detail">
 								<div className="product__image">
-									<img
-										src={beerData[0].image_url}
-										alt={beerData[0].name}
-									/>
+									<img src={beerData.image_url} alt={beerData.name} />
 								</div>
-								<h2>{beerData[0].name}</h2>
-								<h3>{beerData[0].tagline}</h3>
+								<h2>{beerData.name}</h2>
+								<h3>{beerData.tagline}</h3>
 								<div className="brewed__level">
 									<p>First Brewed: </p>
-									<p>{beerData[0].first_brewed}</p>
+									<p>{beerData.first_brewed}</p>
 								</div>
 								<div className="brewed__level">
 									<p>Attenuation level: </p>
-									<p>{beerData[0].attenuation_level}</p>
+									<p>{beerData.attenuation_level}</p>
 								</div>
-								<p className="description">
-									{beerData[0].description}
-								</p>
+								<p className="description">{beerData.description}</p>
 								<Link to="/beerapi">
 									<ArrowLeft />
 								</Link>
@@ -50,11 +45,7 @@ const BeerDetail = () => {
 						</div>
 					) : (
 						<div className="logo__wrapper">
-							<img
-								src="/images/react.svg"
-								className="logo"
-								alt="React logo"
-							/>
+							<img src="/images/react.svg" className="logo" alt="React logo" />
 						</div>
 					)}
 				</section>
