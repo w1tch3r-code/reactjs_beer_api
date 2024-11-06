@@ -2,16 +2,17 @@
 
 ## Beschreibung
 
-Dieses REACT-Projekt wurde im Rahmen eines Coding-Bootcamps bei supercode.de erstellt. 
+Dieses REACT-Projekt wurde im Rahmen eines Coding-Bootcamps bei supercode.de erstellt.
 Es handelt sich um eine Bier-Website in einer Mobile-Ansicht, bei der die Biere per API gefetcht werden.
 
-### Die Anwendung bietet folgende Möglichkeiten:
+### Die Anwendung bietet folgende Möglichkeiten
 
 - Alle Biere in einer Übersichtsseite als Liste anzeigen lassen
 - Biere in einer Detailansicht mit weiteren Infos anzeigen lassen
 - Ein Random Bier in einer Detailansicht anzeigen lassen
 
 ## Tools/Technologien
+
 - HTML5
 - CSS
 - REACT
@@ -19,6 +20,7 @@ Es handelt sich um eine Bier-Website in einer Mobile-Ansicht, bei der die Biere 
 ## Screenshot
 
 ### Ansichten der Webseite
+
 ![Ansicht Home](./public/screenshot_beer_api_home.jpg)
 ![Ansicht All Beers](./public/screenshot_beer_api_allbeers.jpg)
 ![Ansicht Detail Beer](./public/screenshot_beer_api_detailbeer.jpg)
